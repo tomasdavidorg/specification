@@ -3542,7 +3542,7 @@ If `false`, both Event payload and context attributes should be accessible.
 Auth definitions can be used to define authentication information that is applied
 to resources defined in the operation property of [function definitions](#Function-Definition).
 
-If defined, it will replace the [security scheme]() described in the OpenAPI file.
+If defined, it will replace the [security scheme](https://spec.openapis.org/oas/v3.1.0#security-scheme-object) described in the OpenAPI file.
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
