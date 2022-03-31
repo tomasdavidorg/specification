@@ -3248,7 +3248,7 @@ Note that `transition` and `end` properties are mutually exclusive, meaning that
 | name | Unique function name | string | yes |
 | operation | If type is `rest`, <path_to_openapi_definition>#<operation_id>. If type is `asyncapi`, <path_to_asyncapi_definition>#<operation_id>. If type is `rpc`, <path_to_grpc_proto_file>#<service_name>#<service_method>. If type is `graphql`, <url_to_graphql_endpoint>#<literal \"mutation\" or \"query\">#<query_or_mutation_name>. If type is `odata`, <URI_to_odata_service>#<Entity_Set_Name>. If type is `expression`, defines the workflow expression. | string | no |
 | type | Defines the function type. Can be either `rest`, `asyncapi`, `rpc`, `graphql`, `odata`, `expression`, or [`custom`](#defining-custom-function-types). Default is `rest` | enum | no |
-| authRef | References an [auth definition](#Auth-Definition) name to be used to access to resource defined in the operation parameter | string | no |
+| authRef | References an [auth definition](#Auth-Definition) name to be used to access the resource defined in the operation parameter | string | no |
 | [metadata](#Workflow-Metadata) | Metadata information. Can be used to define custom function information | object | no |
 
 <details><summary><strong>Click to view example definition</strong></summary>
@@ -3539,10 +3539,10 @@ If `false`, both Event payload and context attributes should be accessible.
 
 ##### Auth Definition
 
-Auth definitions can be used to define authentication information that should be applied
+Auth definitions can be used to define authentication information that is applied
 to resources defined in the operation property of [function definitions](#Function-Definition).
-It is not used as authentication information for the function invocation, but just to access
-the resource containing the function invocation information.
+
+If defined, it will replace the [security scheme]() described in the OpenAPI file.
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
